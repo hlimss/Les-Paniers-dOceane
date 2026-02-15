@@ -17,7 +17,10 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.VITE_BASE_PATH?.replace(/\/$/, '') || (import.meta.env.PROD ? '/Les-Paniers-dOceane' : '')}>
+        <BrowserRouter basename={(() => {
+          const basePath = import.meta.env.VITE_BASE_PATH || import.meta.env.BASE_URL || '';
+          return basePath.replace(/\/$/, '');
+        })()}>
           <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
