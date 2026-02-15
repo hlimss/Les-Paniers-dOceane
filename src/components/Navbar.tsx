@@ -9,7 +9,10 @@ const Navbar = () => {
   const isHome = location.pathname === "/";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isHome ? "bg-transparent" : "bg-background/90 backdrop-blur-md border-b border-border"}`}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isHome ? "bg-transparent" : "bg-background/90 backdrop-blur-md border-b"}`}
+      style={!isHome ? { borderColor: '#F5F1E8' } : {}}
+    >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="font-heading font-light text-xl tracking-wide">
           <span className={isHome ? "text-cream" : "text-foreground"}>
@@ -23,7 +26,7 @@ const Navbar = () => {
           </Link>
           <Link
             to="/commander"
-            className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2 rounded-full hover:bg-primary/90 transition-all"
+            className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2 rounded-full hover:bg-primary/90 transition-all duration-300 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/35 hover:-translate-y-0.5 border border-primary/20"
           >
             Commander
           </Link>
@@ -43,11 +46,12 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden bg-background border-b overflow-hidden"
+            style={{ borderColor: '#F5F1E8' }}
           >
             <div className="px-6 py-4 space-y-3">
               <Link to="/" onClick={() => setOpen(false)} className="block text-foreground py-2">Accueil</Link>
-              <Link to="/commander" onClick={() => setOpen(false)} className="block bg-primary text-primary-foreground text-center py-3 rounded-full font-medium">
+              <Link to="/commander" onClick={() => setOpen(false)} className="block bg-primary text-primary-foreground text-center py-3 rounded-full font-medium shadow-md shadow-primary/25 hover:shadow-lg transition-all duration-300 border border-primary/20">
                 Commander
               </Link>
             </div>

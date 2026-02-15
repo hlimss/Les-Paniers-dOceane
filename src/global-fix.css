@@ -1,0 +1,40 @@
+/* FIX GLOBAL POUR LE FOND JAUNE */
+/* Ce fichier doit être importé en premier */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #FEFDFB !important;
+  background: #FEFDFB !important;
+}
+
+body {
+  background-color: #FEFDFB !important;
+  background: #FEFDFB !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#root {
+  background-color: #FEFDFB !important;
+  background: #FEFDFB !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Désactiver le mode sombre si activé */
+html.dark {
+  background-color: #FEFDFB !important;
+}
+
+html.dark body {
+  background-color: #FEFDFB !important;
+}
+
+/* Override tous les styles Tailwind qui pourraient causer un fond jaune */
+[class*="bg-"]:not([class*="bg-transparent"]):not([class*="bg-primary"]):not([class*="bg-accent"]):not([class*="bg-secondary"]):not([class*="bg-card"]):not([class*="bg-background"]) {
+  background-color: inherit !important;
+}

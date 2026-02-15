@@ -1,0 +1,222 @@
+/* FORCE FOND BLANC - ULTIME SOLUTION */
+/* Ce fichier override TOUT */
+
+html {
+  background: #FEFDFB !important;
+  background-color: #FEFDFB !important;
+}
+
+body {
+  background: #FEFDFB !important;
+  background-color: #FEFDFB !important;
+}
+
+#root {
+  background: #FEFDFB !important;
+  background-color: #FEFDFB !important;
+}
+
+main {
+  background: #FEFDFB !important;
+  background-color: #FEFDFB !important;
+}
+
+div {
+  background-color: transparent !important;
+}
+
+div#root {
+  background: #FEFDFB !important;
+  background-color: #FEFDFB !important;
+}
+
+/* Override Tailwind bg-background - FORCE BLANC */
+.bg-background,
+[class*="bg-background"] {
+  background-color: #FEFDFB !important;
+  background: #FEFDFB !important;
+}
+
+/* Override tous les éléments avec bg-background */
+*[class*="bg-background"] {
+  background-color: #FEFDFB !important;
+  background: #FEFDFB !important;
+}
+
+/* CACHER TOUS LES OVERLAYS DE DÉVELOPPEMENT */
+#vite-error-overlay,
+.vite-error-overlay,
+[class*="vite-error"],
+[class*="error-overlay"],
+[data-vite-dev-error] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* CORRIGER LES TEXTES JAUNES */
+* {
+  color: inherit !important;
+}
+
+body, p, span, div, h1, h2, h3, h4, h5, h6, a, button {
+  color: #2C2C2C !important;
+}
+
+.text-foreground,
+[class*="text-foreground"] {
+  color: #2C2C2C !important;
+}
+
+/* CORRIGER LES BORDURES JAUNES DES INPUTS - AVEC EFFET 3D */
+input,
+textarea,
+select {
+  border-color: #F5F1E8 !important;
+  border-width: 2px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #9CAF88 !important;
+  outline-color: #9CAF88 !important;
+  box-shadow: 0 4px 12px rgba(156, 175, 136, 0.15), 0 0 0 3px rgba(156, 175, 136, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+[class*="border-input"] {
+  border-color: #F5F1E8 !important;
+  border-width: 2px !important;
+}
+
+[class*="focus:ring-ring"],
+[class*="focus-visible:ring-ring"] {
+  --tw-ring-color: rgba(156, 175, 136, 0.2) !important;
+}
+
+/* AMÉLIORER LES BOUTONS AVEC EFFET 3D */
+button,
+a[class*="bg-primary"],
+a[class*="bg-accent"] {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
+button.bg-primary,
+a.bg-primary {
+  border-color: rgba(156, 175, 136, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(156, 175, 136, 0.25) !important;
+}
+
+button.bg-primary:hover,
+a.bg-primary:hover {
+  box-shadow: 0 6px 20px rgba(156, 175, 136, 0.35) !important;
+}
+
+button.bg-accent,
+a.bg-accent {
+  border-color: rgba(139, 115, 85, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(139, 115, 85, 0.25) !important;
+}
+
+button.bg-accent:hover,
+a.bg-accent:hover {
+  box-shadow: 0 6px 20px rgba(139, 115, 85, 0.35) !important;
+}
+
+/* CORRIGER LES BORDURES JAUNES DU HEADER/NAVBAR */
+nav,
+header,
+[class*="border-b"],
+.border-b {
+  border-color: #F5F1E8 !important; /* cream-beige */
+}
+
+nav.border-b,
+header.border-b {
+  border-bottom-color: #F5F1E8 !important;
+  border-bottom-width: 1px !important;
+}
+
+/* CORRIGER LES CHECKBOXES - ENLEVER LES CONTOURS JAUNES */
+input[type="checkbox"] {
+  accent-color: #9CAF88 !important; /* sage-green */
+  border-color: #F5F1E8 !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #9CAF88 !important;
+  border-color: #9CAF88 !important;
+}
+
+input[type="checkbox"]:focus {
+  outline-color: #9CAF88 !important;
+  box-shadow: 0 0 0 2px rgba(156, 175, 136, 0.2) !important;
+}
+
+input[type="checkbox"]:active {
+  accent-color: #E8B4B8 !important; /* rose au clic */
+}
+
+/* Corriger les checkboxes Radix UI */
+[data-state="checked"] {
+  background-color: #9CAF88 !important;
+  border-color: #9CAF88 !important;
+}
+
+/* CORRIGER LES CHECKS DES REPAS - ENLEVER LE JAUNE, GARDER LE ROSE AU CLIC */
+[class*="rounded-full"][class*="border-2"] {
+  border-color: #F5F1E8 !important; /* beige au lieu de jaune */
+}
+
+[class*="rounded-full"][class*="border-2"].border-primary,
+[class*="rounded-full"][class*="border-2"][style*="borderColor"] {
+  border-color: #9CAF88 !important; /* sage-green quand sélectionné */
+}
+
+/* Effet rose au clic/active - GARDER LE ROSE */
+button:active [class*="rounded-full"][class*="border-2"],
+button:active .w-5.h-5.rounded-full.border-2 {
+  border-color: #E8B4B8 !important; /* rose au clic */
+  background-color: #E8B4B8 !important;
+}
+
+/* Corriger le stepper - enlever le jaune */
+.w-9.h-9.rounded-full.bg-accent {
+  background-color: rgba(156, 175, 136, 0.2) !important; /* sage-green au lieu de jaune */
+  border: 2px solid #9CAF88 !important;
+  color: #9CAF88 !important;
+}
+
+/* Cacher les warnings/erreurs de développement */
+iframe[src*="__vite"],
+iframe[src*="vite"],
+[class*="vite"],
+[data-vite] {
+  display: none !important;
+}
+
+/* CACHER TOUT LOGO OU WATERMARK LOVABLE */
+[class*="lovable"],
+[data-lovable],
+[data-lovable-tag],
+[alt*="lovable"],
+[alt*="Lovable"],
+img[src*="lovable"],
+img[src*="Lovable"],
+a[href*="lovable"],
+a[href*="Lovable"],
+[data-component-tag],
+[data-lovable-id] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Cacher les attributs data-lovable */
+*[data-lovable],
+*[data-lovable-tag],
+*[data-component-tag] {
+  display: none !important;
+}

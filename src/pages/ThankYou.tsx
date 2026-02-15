@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 
 const ThankYou = () => {
   return (
-    <main className="min-h-screen bg-background flex flex-col">
-      <div className="flex-1 flex items-center justify-center px-6">
-        <div className="text-center max-w-lg">
+    <main className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFDFB', paddingTop: '100px' }}>
+      <div className="flex-1 flex items-center justify-center px-6" style={{ minHeight: 'calc(100vh - 100px)' }}>
+        <div className="text-center max-w-lg w-full">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}

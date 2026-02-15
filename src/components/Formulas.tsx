@@ -56,8 +56,8 @@ const Formulas = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="relative bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
+              whileHover={{ scale: 1.02, y: -6 }}
+              className="relative bg-card rounded-2xl p-8 border-2 border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30"
             >
               {formula.badge && (
                 <span className={`absolute top-4 right-4 text-xs font-medium px-3 py-1 rounded-full ${formula.badgeColor}`}>
@@ -89,12 +89,14 @@ const Formulas = () => {
                 ))}
               </ul>
 
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 to="/commander"
-                className="block text-center w-full py-3 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="block text-center w-full py-3 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 Découvrir
               </Link>
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -1,26 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr" style="background-color: #FEFDFB !important;">
   <head>
+    <style>
+      /* FIX IMMÉDIAT DU FOND JAUNE - PRIORITÉ ABSOLUE */
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        background: #FEFDFB !important;
+        background-color: #FEFDFB !important;
+      }
+      body {
+        background: #FEFDFB !important;
+        background-color: #FEFDFB !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #root {
+        background: #FEFDFB !important;
+        background-color: #FEFDFB !important;
+        min-height: 100vh;
+      }
+      main {
+        background: #FEFDFB !important;
+        background-color: #FEFDFB !important;
+      }
+      div {
+        background-color: transparent !important;
+      }
+      div#root {
+        background: #FEFDFB !important;
+        background-color: #FEFDFB !important;
+      }
+      /* CACHER LES OVERLAYS DE DÉVELOPPEMENT */
+      #vite-error-overlay,
+      .vite-error-overlay,
+      [class*="vite-error"],
+      [class*="error-overlay"] {
+        display: none !important;
+        visibility: hidden !important;
+      }
+      /* CORRIGER LES TEXTES JAUNES */
+      body, p, span, div, h1, h2, h3, h4, h5, h6 {
+        color: #2C2C2C !important;
+      }
+      /* CACHER TOUT LOGO LOVABLE */
+      [class*="lovable"],
+      [data-lovable],
+      [data-lovable-tag],
+      [data-component-tag],
+      img[src*="lovable"],
+      a[href*="lovable"] {
+        display: none !important;
+        visibility: hidden !important;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Les Paniers d&#39;Océane</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>Les Paniers d&#39;Océane - Paniers repas équilibrés</title>
     <meta name="description" content="Voici une description captivante pour les clients :
 
 🥗 Les Paniers d&#39;Océane
 Mangez mieux. Simplement.
 Redécouvrez le plaisir de bien manger sans contrainte.">
-    <meta name="author" content="Lovable" />
+    <meta name="author" content="Les Paniers d'Océane" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c63e8853-94f3-4eae-aa44-f4c3e3b968ab?Expires=1771165874&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=QyECsEMb2CAQMpNenh5z5JH%2BnR%2BpWfd28SoghsrfhuX7eTFHfZELfHm4VuWqibf6kv93JJb5po7HGI0J%2BqgPzo3M6yLIiJ5Qv3qqdpRC8WP4V6W%2BesPnsHPa2EZQfMxqACzstq0atlJg8HeeUUf3kO7faWu0575jiKvqUSStQUAK82%2FFfRVpW1E%2Bs2zdyGpq32i1WwADWqbNwn0zNmflG2sBEnl%2BelDKQ4DXbUiLhr7JuuM0qKnb1qOtfvsR0E%2B%2FE%2Bid78z6O3z0WUcJyZM1P5992eUDNrGB6%2FR7TJrqEkdeaWdei3ka6ltN37DKqskegR%2FUSedyvunP%2BTzx4iNryg%3D%3D">
+    <meta property="og:image" content="/og-image.jpg">
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c63e8853-94f3-4eae-aa44-f4c3e3b968ab?Expires=1771165874&amp;GoogleAccessId=go-api-on-aws%40gpt-engineer-390607.iam.gserviceaccount.com&amp;Signature=QyECsEMb2CAQMpNenh5z5JH%2BnR%2BpWfd28SoghsrfhuX7eTFHfZELfHm4VuWqibf6kv93JJb5po7HGI0J%2BqgPzo3M6yLIiJ5Qv3qqdpRC8WP4V6W%2BesPnsHPa2EZQfMxqACzstq0atlJg8HeeUUf3kO7faWu0575jiKvqUSStQUAK82%2FFfRVpW1E%2Bs2zdyGpq32i1WwADWqbNwn0zNmflG2sBEnl%2BelDKQ4DXbUiLhr7JuuM0qKnb1qOtfvsR0E%2B%2FE%2Bid78z6O3z0WUcJyZM1P5992eUDNrGB6%2FR7TJrqEkdeaWdei3ka6ltN37DKqskegR%2FUSedyvunP%2BTzx4iNryg%3D%3D">
+    <meta name="twitter:site" content="@LesPaniersOceanne" />
+    <meta name="twitter:image" content="/og-image.jpg">
     <meta property="og:title" content="Les Paniers d&#39;Océane">
   <meta name="twitter:title" content="Les Paniers d&#39;Océane">
   <meta property="og:description" content="Voici une description captivante pour les clients :
@@ -35,8 +88,22 @@ Mangez mieux. Simplement.
 Redécouvrez le plaisir de bien manger sans contrainte.">
 </head>
 
-  <body>
-    <div id="root"></div>
+  <body style="margin: 0 !important; padding: 0 !important; background-color: #FEFDFB !important; min-height: 100vh;">
+    <div id="root" style="background-color: #FEFDFB !important; min-height: 100vh;"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        background-color: #FEFDFB !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #root {
+        background-color: #FEFDFB !important;
+        min-height: 100vh;
+      }
+    </style>
   </body>
 </html>

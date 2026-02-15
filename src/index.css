@@ -1,85 +1,127 @@
+/* RESET CSS - FORCE FOND BLANC */
+html, body, #root, main {
+  background-color: #FEFDFB !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
 
+/* FORCE FOND BLANC - PRIORITÉ MAXIMALE */
+html {
+  background-color: #FEFDFB !important;
+}
+
+body {
+  background-color: #FEFDFB !important;
+}
+
+#root {
+  background-color: #FEFDFB !important;
+}
+
+main {
+  background-color: #FEFDFB !important;
+}
+
+/* S'assurer que les sections avec bg-secondary utilisent la bonne couleur */
+section.bg-secondary {
+  background-color: #F5F1E8 !important; /* cream-beige */
+}
+
+section.bg-background {
+  background-color: #FEFDFB !important; /* off-white */
+}
+
 @layer base {
   :root {
-    --background: 40 50% 99%;
-    --foreground: 0 0% 17%;
+    /* Premium color palette - Les Paniers d'Océane */
+    --sage-green: 156 175 136; /* #9CAF88 */
+    --cream-beige: 245 241 232; /* #F5F1E8 */
+    --off-white: 254 253 251; /* #FEFDFB */
+    --charcoal: 44 44 44; /* #2C2C2C */
+    --accent-terracotta: 139 115 85; /* #8B7355 - Terracotta doux */
 
-    --card: 41 52% 96%;
-    --card-foreground: 0 0% 17%;
+    --background: 254 253 251; /* off-white - #FEFDFB */
+    --background-hex: #FEFDFB;
+    --foreground: 44 44 44; /* charcoal */
 
-    --popover: 40 50% 99%;
-    --popover-foreground: 0 0% 17%;
+    --card: 245 241 232; /* cream-beige */
+    --card-foreground: 44 44 44;
 
-    --primary: 100 18% 61%;
-    --primary-foreground: 40 50% 99%;
+    --popover: 254 253 251;
+    --popover-foreground: 44 44 44;
 
-    --secondary: 41 52% 93%;
-    --secondary-foreground: 0 0% 17%;
+    --primary: 156 175 136; /* sage-green */
+    --primary-foreground: 254 253 251;
 
-    --muted: 41 30% 90%;
-    --muted-foreground: 0 0% 40%;
+    --secondary: 245 241 232; /* cream-beige */
+    --secondary-foreground: 44 44 44;
 
-    --accent: 46 65% 52%;
-    --accent-foreground: 0 0% 17%;
+    --muted: 245 241 232;
+    --muted-foreground: 44 44 44 / 0.6;
+
+    --accent: 139 115 85; /* accent-terracotta - Terracotta doux */
+    --accent-foreground: 44 44 44;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 254 253 251;
 
-    --border: 41 30% 85%;
-    --input: 41 30% 85%;
-    --ring: 100 18% 61%;
+    --border: 245 241 232 / 0.5;
+    --input: 245 241 232;
+    --ring: 156 175 136;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 41 52% 96%;
-    --sidebar-foreground: 0 0% 17%;
-    --sidebar-primary: 100 18% 61%;
-    --sidebar-primary-foreground: 40 50% 99%;
-    --sidebar-accent: 41 52% 93%;
-    --sidebar-accent-foreground: 0 0% 17%;
-    --sidebar-border: 41 30% 85%;
-    --sidebar-ring: 100 18% 61%;
+    --sidebar-background: 245 241 232;
+    --sidebar-foreground: 44 44 44;
+    --sidebar-primary: 156 175 136;
+    --sidebar-primary-foreground: 254 253 251;
+    --sidebar-accent: 245 241 232;
+    --sidebar-accent-foreground: 44 44 44;
+    --sidebar-border: 245 241 232 / 0.5;
+    --sidebar-ring: 156 175 136;
 
-    /* Custom tokens */
-    --sage: 100 18% 61%;
-    --cream: 41 52% 93%;
-    --gold: 46 65% 52%;
-    --charcoal: 0 0% 17%;
+    /* Custom tokens for direct use */
+    --sage: 156 175 136;
+    --cream: 245 241 232;
+    --gold: 139 115 85; /* Terracotta doux */
+    --charcoal: 44 44 44;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 41 52% 93%;
-    --card: 0 0% 13%;
-    --card-foreground: 41 52% 93%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 41 52% 93%;
-    --primary: 100 18% 61%;
-    --primary-foreground: 0 0% 10%;
-    --secondary: 0 0% 17%;
-    --secondary-foreground: 41 52% 93%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 41 20% 65%;
-    --accent: 46 65% 52%;
-    --accent-foreground: 0 0% 10%;
+    /* Dark mode - keeping premium feel */
+    --background: 44 44 44;
+    --foreground: 245 241 232;
+    --card: 44 44 44 / 0.8;
+    --card-foreground: 245 241 232;
+    --popover: 44 44 44;
+    --popover-foreground: 245 241 232;
+    --primary: 156 175 136;
+    --primary-foreground: 44 44 44;
+    --secondary: 44 44 44 / 0.6;
+    --secondary-foreground: 245 241 232;
+    --muted: 44 44 44 / 0.4;
+    --muted-foreground: 245 241 232 / 0.7;
+    --accent: 139 115 85; /* Terracotta doux */
+    --accent-foreground: 44 44 44;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 100 18% 61%;
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 41 52% 93%;
-    --sidebar-primary: 100 18% 61%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 17%;
-    --sidebar-accent-foreground: 41 52% 93%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 100 18% 61%;
+    --destructive-foreground: 245 241 232;
+    --border: 245 241 232 / 0.2;
+    --input: 245 241 232 / 0.1;
+    --ring: 156 175 136;
+    --sidebar-background: 44 44 44;
+    --sidebar-foreground: 245 241 232;
+    --sidebar-primary: 156 175 136;
+    --sidebar-primary-foreground: 44 44 44;
+    --sidebar-accent: 44 44 44 / 0.6;
+    --sidebar-accent-foreground: 245 241 232;
+    --sidebar-border: 245 241 232 / 0.2;
+    --sidebar-ring: 156 175 136;
   }
 }
 
@@ -88,12 +130,73 @@
     @apply border-border;
   }
 
+  html {
+    background-color: #FEFDFB !important;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
+    background-color: #FEFDFB !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #FEFDFB !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    background-color: #FEFDFB !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+  }
+
+  /* Force les couleurs des boutons - couleurs directes */
+  button.bg-primary,
+  a.bg-primary,
+  .bg-primary,
+  [class*="bg-primary"] {
+    background-color: #9CAF88 !important; /* sage-green */
+    color: #FEFDFB !important; /* off-white */
+  }
+
+  button.bg-accent,
+  a.bg-accent,
+  .bg-accent,
+  [class*="bg-accent"] {
+    background-color: #8B7355 !important; /* terracotta */
+    color: #2C2C2C !important; /* charcoal */
+  }
+
+  /* S'assurer qu'il n'y a pas de fond jaune ou rose */
+  html {
+    background-color: #FEFDFB !important;
+  }
+
+  body {
+    background-color: #FEFDFB !important;
+  }
+
+  #root {
+    background-color: #FEFDFB !important;
+  }
+
+  main {
+    background-color: #FEFDFB !important;
+  }
+
+  /* Éviter les couleurs par défaut du navigateur */
+  button:not([class*="bg-"]):not([class*="text-"]) {
+    background-color: #9CAF88 !important;
+    color: #FEFDFB !important;
   }
 }
 
@@ -103,6 +206,26 @@
   }
 
   .text-gradient-gold {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-[hsl(46,65%,62%)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-[hsl(139,25%,45%)];
+  }
+
+  /* Premium spacing utilities */
+  .spacing-generous {
+    @apply space-y-20 md:space-y-28;
+  }
+
+  /* Line height for body text */
+  .leading-comfortable {
+    line-height: 1.6;
+  }
+
+  /* Amélioration des images hero */
+  .hero-image {
+    filter: brightness(0.85) contrast(1.1) saturate(1.2) hue-rotate(-5deg);
+    transition: filter 0.3s ease;
+  }
+
+  .hero-image:hover {
+    filter: brightness(0.9) contrast(1.15) saturate(1.3);
   }
 }
