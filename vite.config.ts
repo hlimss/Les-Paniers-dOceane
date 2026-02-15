@@ -5,8 +5,13 @@ import { copyFileSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // IMPORTANT : chemin relatif pour éviter les 404 sur Vercel
-  base: "./",
+  // Configuration du base path selon l'environnement
+  // - Vercel : base = "/" (détecté automatiquement via VERCEL env var)
+  // - GitHub Pages : base = "/Les-Paniers-dOceane/" (sous-chemin du repo)
+  // - Dev : base = "/"
+  base: process.env.VERCEL 
+    ? '/' 
+    : (process.env.VITE_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/Les-Paniers-dOceane/' : '/')),
 
   build: {
     rollupOptions: {
@@ -35,7 +40,7 @@ export default defineConfig({
   ],
 
   server: {
-    host: "::",
+    host: true, // Écoute sur toutes les interfaces (localhost, 127.0.0.1, etc.)
     port: 5173,
     hmr: {
       overlay: false,

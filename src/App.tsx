@@ -18,8 +18,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter basename={(() => {
-          const basePath = import.meta.env.VITE_BASE_PATH || import.meta.env.BASE_URL || '';
-          return basePath.replace(/\/$/, '');
+          // Le basename doit correspondre au base de Vite, mais sans le slash final
+          const base = import.meta.env.BASE_URL || '';
+          // Enlever le slash final si présent
+          return base.replace(/\/$/, '');
         })()}>
           <Navbar />
           <Routes>
