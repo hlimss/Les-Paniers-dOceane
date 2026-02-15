@@ -5,7 +5,7 @@ import { copyFileSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/Les-Paniers-dOceane/' : '/',
+  base: process.env.VITE_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/Les-Paniers-dOceane/' : '/'),
   build: {
     rollupOptions: {
       onwarn(warning, warn) {
